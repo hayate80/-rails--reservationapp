@@ -1,0 +1,27 @@
+<section>
+  <h2>設定</h2>
+
+  <div class=user_container>
+    <ul>
+      <li><%= link_to "アカウント", :users_account %></li>
+      <li><%= link_to "プロフィール", :users_profile %></li>
+    </ul>
+    <div>
+      <div>
+        <h3>アカウント</h3>
+        <p><%= link_to '編集', edit_user_registration_path %></p>
+      </div>
+      <table>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= current_user.email %></td>
+        </tr>
+        <tr>
+          <th>パスワード</th>
+          <td>*********</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</section>

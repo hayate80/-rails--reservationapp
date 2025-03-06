@@ -1,0 +1,31 @@
+<section>
+  <h2>設定</h2>
+
+  <div class=user_container>
+    <ul>
+      <li><%= link_to "アカウント", :users_account %></li>
+      <li><%= link_to "プロフィール", :users_profile %></li>
+    </ul>
+    <div>
+      <div>
+        <h3>プロフィール</h3>
+        <p><%= link_to "編集", edit_user_path(current_user.id) %></p>
+      </div>
+      <table>
+        <tr>
+          <th>アイコン画像</th>
+          <td>画像</td>
+        </tr>
+        <tr>
+          <th>名前</th>
+          <td><%= current_user.name %></td>
+        </tr>
+        <tr>
+          <th>自己紹介</th>
+          <td><%= current_user.introduction %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</section>
