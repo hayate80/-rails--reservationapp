@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reservations/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -9,4 +10,9 @@ Rails.application.routes.draw do
   resources :users
   resources :rooms
   root to: 'top#index'
+  resources 'reservations' do
+    collection do
+      post 'confirm'
+    end
+  end
 end

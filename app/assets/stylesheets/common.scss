@@ -1,0 +1,104 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: coral;
+    padding: 10px 30px;
+}
+
+footer{
+    padding: 50px 30px 100px;
+    background-color: coral;
+}
+
+body, h1, h2, h3, h4, p, div, li{
+    margin: 0;
+}
+
+h3{
+    font-size: 30px;
+}
+
+a{
+    text-decoration: none;
+}
+
+section{
+    padding: 40px 40px;
+    padding-bottom: 150px;
+}
+
+button{
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input{
+    font-size: 15px;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0;
+}
+
+tr{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+th{
+    width: 18%;
+    text-align: start;
+}
+
+.mypage-btn-container {
+    position: relative;
+    cursor: pointer;
+    right: 20px;
+  }
+
+.mypage-dropdown {
+    width: 115px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 3px 7px;
+  border: 1px solid #ccc;
+  z-index: 999;
+}
+
+.save_button{
+    width: 100%;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 12px;
+    padding: 5px;
+    color: #fff;
+    background-color: cornflowerblue;
+}
+
+.cansel_button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    padding: 5px;
+    color: #fff;
+    background-color: darkgray;
+}
+
+.rounded-circle{
+    border-radius: 50%;
+    vertical-align: middle;
+}

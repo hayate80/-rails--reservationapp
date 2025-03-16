@@ -1,32 +1,41 @@
-<h3>新規登録</h3>
-
+<section>
+  <div class = room_container >
+    <h3>新規登録</h3>
     <%= form_with model: @room do |f| %>
-      <table>
+      <table class = room_new_table >
         <tr>
           <th><%= f.label :room_name ,"施設名" %></th>
-          <td><%= f.text_field :room_name %></td>
+          <td class = room_input ><%= f.text_field :room_name, placeholder: "ルーム名を入力", class: 'form-control' %></td>
         </tr>
 
         <tr>
           <th><%= f.label :room_detail ,"施設詳細" %></th>
-          <td><%= f.text_field :room_detail %></td>
+          <td class = room_input ><%= f.text_area :room_detail, placeholder: "施設詳細を入力", class: 'form-control',rows: 5 %></td>
         </tr>
 
         <tr>
           <th><%= f.label :price ,"料金" %></th>
-          <td><%= f.text_field :price %></td>
+          <td class = room_input ><%= f.text_field :price, placeholder: "一日の料金を入力", class: 'form-control' %></td>
         </tr>
 
         <tr>
           <th><%= f.label :address ,"住所" %></th>
-          <td><%= f.text_field :address %></td>
+          <td class = room_input ><%= f.text_field :address, placeholder: "住所を入力", class: 'form-control' %></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :room_img, "施設画像" %></th>
+          <td class = room_input ><%= f.file_field :room_img %></td>
         </tr>
       </table>
+      <%= f.hidden_field :user_id, value: current_user.id %>
 
       <div>
         <ul>
-          <li><%= f.submit "保存"%></li>
-          <li><%= link_to "キャンセル", :back %></li>
+          <li><%= f.submit "保存", class: 'save_button' %></li>
+          <li><%= link_to "キャンセル", :back, class: 'cansel_button' %></li>
         </ul>
       </div>
     <% end %>
+  </div>
+</section>

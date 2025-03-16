@@ -8,6 +8,12 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import "script.js"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require('jquery')
+require('bootstrap')
+require('data-confirm-modal')

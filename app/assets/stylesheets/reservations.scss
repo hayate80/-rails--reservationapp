@@ -1,0 +1,44 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.ReservationConfirmContainer{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+.ReservationConfirmGroup{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.ReservationConfirmButton{
+    margin-top: 20px;
+}
+
+.ReservationGroup{
+    display: table-row;
+}
+
+.ReservationItem{
+    border-bottom: 1px solid #808080;
+    width: auto;
+}
+
+.ReservationItem1{
+    border-bottom: 1px solid #808080;
+    width: 220px;
+}
+
+.ReservationData{
+    border-bottom: 1px solid #C0C0C0;
+    padding: 0;
+}
+
+.reservation_img{
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+}
