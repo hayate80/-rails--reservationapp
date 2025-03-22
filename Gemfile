@@ -56,3 +56,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'psych', '~> 3.1'
+gem 'devise'
+gem 'omniauth-twitter'
+gem 'rename'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'mini_magick', '4.5.1'
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal', branch: 'bootstrap2'
+gem 'rails-i18n'

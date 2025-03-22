@@ -1,0 +1,28 @@
+<section class = container>
+  <h2>設定</h2>
+
+  <div class = user_container >
+    <%= render "shared/partial" %>
+    <div class = user_setting_container >
+      <div class = user_setting_container_top >
+        <h3>プロフィール</h3>
+        <p class = user_edit_link ><%= link_to "編集", edit_user_path(current_user.id) %></p>
+      </div>
+      <table>
+        <tr class = profile_input >
+          <th>アイコン画像</th>
+          <td><%= image_tag current_user.icon_img_url, class: "ProfileIcon"  %></td>
+        </tr>
+        <tr class = profile_input >
+          <th>名前</th>
+          <td><%= current_user.name %></td>
+        </tr>
+        <tr class = profile_input >
+          <th>自己紹介</th>
+          <td><%= current_user.introduction %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</section>

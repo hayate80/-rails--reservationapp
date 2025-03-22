@@ -1,0 +1,38 @@
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<section>
+  <h3>登録済み施設一覧</h3>
+
+    <table class = room_index_table >
+      <thead>
+        <tr class = room_all >
+          <th class = room_item1 >画像</th>
+          <th class = room_item >施設名</th>
+          <th class = room_item >紹介文</th>
+          <th class = room_item >料金</th>
+          <th class = room_item >作成日</th>
+          <th class = room_item >編集</th>
+          <th class = room_item >削除</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @rooms.each do |room| %>
+          <tr class = room_all >
+            <td class=room_data><%= image_tag room.room_img_url(:room_size), class: 'room_img' %></td>
+            <td class=room_data><%= link_to room.room_name, room %></td>
+            <td class=room_data><%= room.room_detail %></td>
+            <td class=room_data>¥<%= room.price %>~</td>
+            <td class=room_data><%= room.created_at.to_s(:date_jp) %></td>
+            <td class=room_data><%= link_to '編集', edit_room_path(room.id) %></td>
+            <td class=room_data><%= link_to '削除', room, method: :delete, data: { confirm: '本当に削除して良いですか?',
+            cancel: 'やめる',
+            commit: '削除する'},title: "削除確認" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</section>

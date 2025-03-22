@@ -1,0 +1,37 @@
+<section>
+  <h3>予約済み一覧</h3>
+
+    <table class = ReservationItemAll >
+      <thead>
+        <tr class = ReservationGroup >
+          <th class = ReservationItem1 >画像</th>
+          <th class = ReservationItem >施設名</th>
+          <th class = ReservationItem >紹介文</th>
+          <th class = ReservationItem >合計料金</th>
+          <th class = ReservationItem >チェックイン</th>
+          <th class = ReservationItem >チェックアウト</th>
+          <th class = ReservationItem >予約確定日時</th>
+          <th class = ReservationItem >編集</th>
+          <th class = ReservationItem >削除</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr class = ReservationGroup >
+            <td class = ReservationData ><%= image_tag reservation.room.room_img_url(:room_size), class: 'reservation_img' %></td>
+            <td class = ReservationData ><%= link_to reservation.room.room_name, reservation.room %></td>
+            <td class = ReservationData ><%= reservation.room.room_detail %></td>
+            <td class = ReservationData >¥<%= (reservation.checkout - reservation.checkin).to_i * reservation.number_people * reservation.room.price %>~</td>
+            <td class = ReservationData ><%= reservation.checkin.strftime( "%Y/%m/%d" ) %></td>
+            <td class = ReservationData ><%= reservation.checkout.strftime( "%Y/%m/%d" ) %></td>
+            <td class = ReservationData ><%= reservation.created_at.to_s(:datetime_jp) %></td>
+            <td class = ReservationData ><%= link_to '編集', edit_reservation_path(reservation.id) %></td>
+            <td class = ReservationData ><%= link_to '削除', reservation, method: :delete, data: { confirm: '本当に削除して良いですか?',
+            cancel: 'やめる',
+            commit: '削除する'},title: "削除確認" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</section>

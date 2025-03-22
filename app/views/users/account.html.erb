@@ -1,0 +1,24 @@
+<section>
+  <h2>設定</h2>
+
+  <div class = user_container >
+    <%= render "shared/partial" %>
+    <div class = user_setting_container >
+      <div class = user_setting_container_top >
+        <h3>アカウント</h3>
+        <p class = user_edit_link ><%= link_to '編集', edit_user_registration_path %></p>
+      </div>
+      <table>
+        <tr class = account_input >
+          <th>メールアドレス</th>
+          <td><%= current_user.email %></td>
+        </tr>
+        <tr class = account_input >
+          <th>パスワード</th>
+          <td>*********</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</section>

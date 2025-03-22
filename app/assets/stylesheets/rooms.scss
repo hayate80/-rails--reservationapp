@@ -1,0 +1,115 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.room_container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+.room_new_table, .room_index_table{
+    margin-top: 20px;
+}
+
+.room_input{
+    width: 82%;   
+}
+
+.form-control{
+    width: 100%;
+}
+
+.room_all{
+    display: table-row;
+}
+
+.room_item{
+    border-bottom: 1px solid #808080;
+    width: auto;
+}
+
+.room_item1{
+    border-bottom: 1px solid #808080;
+    width: 220px;
+}
+
+.room_data{
+    border-bottom: 1px solid #C0C0C0;
+    padding: 0;
+}
+
+.room_img{
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.room_show_container_top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.show_room_img{
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.room_detail_body{
+    width: 50%;
+    padding: 30px 24px;
+    background-color: #FFDBC9;
+    height: fit-content;
+}
+
+.main_show_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.room_name_price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ReservationFormInput{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ReservationFormSaveButton{
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    background-color: cornflowerblue;
+}
+
+.RoomList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+
+}
+
+.Room{
+    background-color: #fff8f1;
+    width: 200px;
+}
+
+.ReservationEditImg{
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.SearchRoomContainer{
+    background-color: #C0C0C0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 290px;
+}
