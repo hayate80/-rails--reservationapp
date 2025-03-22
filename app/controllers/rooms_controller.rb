@@ -12,7 +12,8 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(params.require(:room).permit(:room_name, :room_detail, :price, :address, :user_id, :room_img))
     if @room.save
-      redirect_to :rooms
+      flash[:notice] = "施設が作成されました"
+      redirect_to room_path(@room.id)
     else
       render "new"
     end
@@ -30,8 +31,8 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
     if @room.update(params.require(:room).permit(:room_name, :room_detail, :price, :address, :user_id, :room_img))
-      flash[:notice] = "ユーザーIDが「#{@room.id}」の情報を更新しました"
-      redirect_to :rooms
+      flash[:notice] = "施設情報が変更されました"
+      redirect_to room_path(@room.id)
     else
       render "edit"
     end
@@ -40,10 +41,9 @@ class RoomsController < ApplicationController
   def destroy
     @room = Room.find(params[:id])
     @room.destroy
-    flash[:notice] = "ユーザーを削除しました"
+    flash[:notice] = "施設情報を削除しました"
     redirect_to :rooms
   end
-  
 end
 
 

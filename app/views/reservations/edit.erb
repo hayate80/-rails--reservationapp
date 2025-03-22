@@ -1,0 +1,37 @@
+<%= render "shared/error", obj: @reservation %>
+
+<section>
+  <div class = room_container >
+    <h3>再予約</h3>
+    <%= form_with model: @reservation, url: edit_confirm_reservation_path(@reservation.id), method: :post, class: "ReservationForm" do |f| %>
+      <table class = room_new_table >
+        <tr>
+          <th><%= image_tag @reservation.room.room_img_url(:room_size), class: 'ReservationEditImg' %></th>
+        </tr>
+        <tr>
+          <th><%= f.label :checkin ,"チェックイン" %></th>
+          <td class = room_input ><%= f.date_field :checkin, class: 'form-control' %></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :checkout ,"チェックアウト" %></th>
+          <td class = room_input ><%= f.date_field :checkout, class: 'form-control' %></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :number_people ,"人数" %></th>
+          <td class = room_input ><%= f.text_field :number_people, class: 'form-control' %></td>
+        </tr>
+      </table>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :room_id, value: @reservation.room.id %>
+
+      <div>
+        <ul>
+          <li><%= f.submit "保存", class: 'save_button' %></li>
+          <li><%= link_to "キャンセル", :back, class: 'cansel_button' %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</section>

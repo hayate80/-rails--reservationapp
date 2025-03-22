@@ -19,7 +19,7 @@
     </div>
     <div class = ReservationConfirmGroup >
       <p>お支払い金額</p>
-      <p><%= (@reservation.checkout - @reservation.checkin).to_i * @reservation.number_people * @room.price %></p>
+      <p>¥<%= (@reservation.checkout - @reservation.checkin).to_i * @reservation.number_people * @room.price %></p>
     </div>
     <div class = ReservationConfirmGroup >
       <p>上記内容で正しければ「確定」ボタンを押してください</p>

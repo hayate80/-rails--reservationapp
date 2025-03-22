@@ -12,11 +12,14 @@
 
   <body>
     <header>
-      <h1>Potepan travel</h1>
+      <h1><%= link_to 'Potepan travel', :root %></h1>
       <nav>
         <% if user_signed_in? %>
           <div class="mypage-btn-container" id="mypageBtnContainer">
-            <div><%= image_tag current_user.icon_img_url(:icon), class: "rounded-circle" %> <%= current_user.name %></div>
+            <div>
+              <%= image_tag current_user.icon_img_url(:icon), class: "rounded-circle" %> 
+              <button><%= current_user.name %></button>
+            </div>
 	          <ul class="mypage-dropdown" id="mypageDropdown">
               <li><%= link_to '施設の新規登録', new_room_path %></li>
               <li><%= link_to '予約済み一覧', reservations_path %></li>
@@ -28,11 +31,15 @@
 
 
         <% else %>
-          <%= link_to 'サインアップ', new_user_registration_path %>
-          <%= link_to 'ログイン', new_user_session_path %>
+          <button class="HeaderButton"><%= link_to '新規登録', new_user_registration_path %></button>
+          <button class="HeaderButton"><%= link_to 'ログイン', new_user_session_path %></button>
         <% end %>
       </nav>
     </header>
+
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
 
     <%= yield %>
 

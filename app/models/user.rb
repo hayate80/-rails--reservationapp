@@ -6,4 +6,6 @@ class User < ApplicationRecord
   mount_uploader :icon_img, IconImgUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  validates :name, presence: true
 end

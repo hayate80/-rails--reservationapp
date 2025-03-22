@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(params.require(:user).permit(:name, :icon_img, :introduction))
-      flash[:notice] = "ユーザーIDが「#{@user.id}」の情報を更新しました"
+      flash[:notice] = "プロフィール情報が変更されました"
       redirect_to :users_profile
     else
       render "edit"

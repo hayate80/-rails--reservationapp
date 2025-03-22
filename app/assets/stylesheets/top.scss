@@ -1,3 +1,56 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.SearchInput, .SearchButton{
+    margin-top: 10px;
+}
+
+.AreaContainer{
+    padding-inline: 40px 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.AreaGroup{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.AreaItemTokyou{
+    background-image: url(tokyo.jpg);
+    width: 300px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    font-size: 40px;
+    color: #fff;
+}
+
+.AreaItemOsaka{
+    background-image: url(osaka.jpg);
+    width: 300px;
+    height: 500px;
+    background-size: cover;
+    font-size: 40px;
+    color: #fff;
+}
+
+.AreaItemKyoto{
+    background-image: url(kyoto.jpg);
+    width: 300px;
+    height: 500px;
+    background-size: cover;
+    font-size: 40px;
+    color: #fff;
+}
+
+.AreaItemSapporo{
+    background-image: url(sapporo.jpg);
+    width: 300px;
+    height: 500px;
+    background-size: cover;
+    font-size: 40px;
+    color: #fff;
+}

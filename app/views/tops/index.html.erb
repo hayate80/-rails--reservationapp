@@ -1,0 +1,38 @@
+<div class = FirstView>
+  <ul class = FirstViewSearch>
+    <%= form_with model: @room, url: tops_search_path(address_keyword: params[:address_keyword]), method: :get do |f| %>
+    <li><%= f.text_field :address_keyword, placeholder: "エリア名を入力", class: "SearchInput" %></li>
+    <li><%= f.submit "検索", class: "SearchButton" %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class=AreaContainer>
+  <h2>おすすめエリア</h2>
+  <ul class=AreaGroup>
+    <%= form_with model: @room, url: :tops_search do |f| %>
+      <li class=AreaItem>
+        <%= f.hidden_field :address_keyword, value: '東京' %>
+        <%= f.submit "東京", class: 'AreaItemTokyou' %></li>
+      </li>
+    <% end %>
+    <%= form_with model: @room, url: :tops_search do |f| %>
+      <li class=AreaItem>
+        <%= f.hidden_field :address_keyword, value: '大阪' %>
+        <%= f.submit "大阪", class: 'AreaItemOsaka' %></li>
+      </li>
+    <% end %>
+    <%= form_with model: @room, url: :tops_search do |f| %>
+      <li class=AreaItem>
+        <%= f.hidden_field :address_keyword, value: '京都' %>
+        <%= f.submit "京都", class: 'AreaItemKyoto' %></li>
+      </li>
+    <% end %>
+    <%= form_with model: @room, url: :tops_search do |f| %>
+      <li class=AreaItem>
+        <%= f.hidden_field :address_keyword, value: '北海道' %>
+        <%= f.submit "北海道", class: 'AreaItemSapporo' %></li>
+      </li>
+    <% end %>
+  </ul>
+</div>

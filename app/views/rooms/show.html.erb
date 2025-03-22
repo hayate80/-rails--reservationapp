@@ -1,18 +1,19 @@
-<div>検索欄</div>
+<%= render "shared/error", obj: @reservation %>
 
 <section>
-
   <div class = room_show_container>
     <ul class = room_show_container_top>
       <li><%= link_to '←戻る', :back %><li>
+      <% if @room.user_id == current_user.id %>
       <li><%= link_to '編集', edit_room_path(@room.id) %></li>
+      <% end %>
     </ul>
   <div class = main_show_container>
     <div><%= image_tag @room.room_img_url, class: 'show_room_img' %></div>
     <div class = room_detail_body>
       <div class = room_name_price>
         <p><%= @room.room_name %></p>
-        <p><%= @room.price %></p>
+        <p>¥<%= @room.price %>~</p>
       </div>
       <p><%= @room.address %></p>
       <%= image_tag 'star.svg' %>
@@ -24,14 +25,15 @@
 
 
       <div class = reservationform_container>
-        <%= form_with model: @reservation, url: confirm_reservations_path, class: "ReservationForm" do |f| %>
+        <%= render "shared/error", obj: @reservation %>
+        <%= form_with model: @reservation, url: :confirm_reservations, class: "ReservationForm" do |f| %>
           <div class = ReservationFormInput>
             <ul>
-              <li><%= f.label :checkin ,"開始日" %></li>
+              <li><%= f.label :checkin ,"チェックイン" %></li>
               <li><%= f.date_field :checkin %></li>
             </ul>
             <ul>
-              <li><%= f.label :checkout ,"開始日" %></li>
+              <li><%= f.label :checkout ,"チェックアウト" %></li>
               <li><%= f.date_field :checkout %></li>
             </ul>
             <ul>
@@ -40,6 +42,7 @@
             </ul>
           </div>
           <%= f.hidden_field :room_id, value: @room.id %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
           <ul>
             <li><%= f.submit "予約する", class: 'ReservationFormSaveButton'%></li>
           </ul>

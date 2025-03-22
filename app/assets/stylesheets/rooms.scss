@@ -88,3 +88,28 @@
     color: #fff;
     background-color: cornflowerblue;
 }
+
+.RoomList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+
+}
+
+.Room{
+    background-color: #fff8f1;
+    width: 200px;
+}
+
+.ReservationEditImg{
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.SearchRoomContainer{
+    background-color: #C0C0C0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 290px;
+}

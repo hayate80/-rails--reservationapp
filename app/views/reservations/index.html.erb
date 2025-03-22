@@ -22,9 +22,9 @@
             <td class = ReservationData ><%= image_tag reservation.room.room_img_url(:room_size), class: 'reservation_img' %></td>
             <td class = ReservationData ><%= link_to reservation.room.room_name, reservation.room %></td>
             <td class = ReservationData ><%= reservation.room.room_detail %></td>
-            <td class = ReservationData ><%= (reservation.checkout - reservation.checkin).to_i * reservation.number_people * reservation.room.price %></td>
-            <td class = ReservationData ><%= reservation.checkin %></td>
-            <td class = ReservationData ><%= reservation.checkout %></td>
+            <td class = ReservationData >¥<%= (reservation.checkout - reservation.checkin).to_i * reservation.number_people * reservation.room.price %>~</td>
+            <td class = ReservationData ><%= reservation.checkin.strftime( "%Y/%m/%d" ) %></td>
+            <td class = ReservationData ><%= reservation.checkout.strftime( "%Y/%m/%d" ) %></td>
             <td class = ReservationData ><%= reservation.created_at.to_s(:datetime_jp) %></td>
             <td class = ReservationData ><%= link_to '編集', edit_reservation_path(reservation.id) %></td>
             <td class = ReservationData ><%= link_to '削除', reservation, method: :delete, data: { confirm: '本当に削除して良いですか?',

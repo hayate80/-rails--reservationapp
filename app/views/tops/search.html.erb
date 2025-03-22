@@ -1,0 +1,33 @@
+<section>
+  <%= form_with model: @room, url: tops_search_path(address_keyword: params[:address_keyword], keyword: params[:keyword]), method: :get do |f| %>
+    <div class=SearchRoomContainer>
+      <div><%= f.text_field :address_keyword, placeholder: "エリア名を入力", class: "" %></div>
+      <div><%= f.text_field :keyword, placeholder: "キーワード名を入力", class: "" %></div>
+      <div><%= f.submit "検索", class: "" %></div>
+    </div>
+  <% end %>
+
+  <p><span><%= @rooms.count %></span>件が見つかりました</p>
+  
+  <div>
+    <ul class = RoomList>
+      <% @rooms.each do |room| %>
+        <li class = Room>
+          <%= image_tag room.room_img_url(:room_size), class: 'room_img' %>
+          <div>
+            <p><%= link_to room.room_name, room %></p>
+            <p><%= room.address %></p>
+            <%= image_tag 'star.svg' %>
+            <%= image_tag 'star.svg' %>
+            <%= image_tag 'star.svg' %>
+            <%= image_tag 'star.svg' %>
+            <%= image_tag 'star.svg' %>
+            <p><%= room.room_detail %></p>
+            <p>¥<%= room.price %>~</p>
+            <p><%= link_to "詳細はこちら", room %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
